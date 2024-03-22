@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/* comando para ignorar acentuação */
+
+section#conteudo {
+    /* largura */
+    width: 1000px;
+    /* margens automaticas - conteudo centralizado na tela */
+    margin: auto;
+}
+
+iframe#frame-spec {
+    width: 450px;
+    /* altura */
+    height: 300px;
+    /* remoção da borda */
+    border: none;
+    /* removendo a visualizaçã do conteudo */
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+iframe#frame-spec::-webkit-scrollbar {
+    display: none;
+
+}

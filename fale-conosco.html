@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8"\>
+    <title>Tudo sobre Google Glass</title>
+
+    <!-- ligação com o arquivo CSS -->
+
+    <link rel="stylesheet" type="text/css" href="_css/form.css"\>
+
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css"\>
+
+
+</head>
+
+<!-- ligação com o arquivo javascript - funções -->
+
+<script src="_javascript/funcoes.js"></script>
+
+<script>
+    function calc_total() {
+        var qtd = parseInt(document.getElementById('tQtd').value);
+        tot = qtd * 1500;
+        document.getElementById('cTot').value = tot;
+    }
+</script>
+
+<body>    
+<div id="interfaces"> 
+
+
+<header id="cabecalho">
+<hgroup>
+<h1> Google Glass</h1>
+<h2>A revolução do Google está chegando</h2>
+</hgroup>
+
+<img id="icone" src="C:\Users\vibe\Desktop\Git Repo\
+html5 - projetos - front end\projeto-site\pacote1\projeto-glass-html5\_imagens\contato.png"\>
+
+<nave id="menu">
+    <h1>Menu Principal</h1>
+    <ul type="circle">
+
+        <li onmouseover="mudaFoto('_imagens/home.png')"  onmouseout="mudaFoto('_imagens/contato.png')">
+        <a href="index.html">Home</a></li>
+
+        <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+
+        <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+
+        <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+        
+        <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+
+    </ul>
+</nave>
+
+</header>
+
+<section id="corpo-full">
+
+    <article id="Fale-conosco">
+
+            <header id="cabecalho-artigo"> 
+        
+                <hgroup>
+                    <h3> > Fale Conosco > &nbsp; Contato </h3>
+                    <h1>Formulário de Contato</h1>
+                    <h2> por Gustavo Guanabara</h2>
+                    <h3 class="direita">Atualizado em 01/Maio/2013</h3>
+                </hgroup>
+        
+            </header>
+
+            <form method="post" id="fContato" action="mailto:arg-07@hotmail.com" oninput="calc_total();">
+
+
+<fieldset id="usuario">
+    
+    <legend id="identificacao">Identificação do Usuário</legend>
+    <p> <label for="cNome"> Nome: </label> 
+        <input type="text" name="tNome" id="cNome" size="40" maxlength="30" placeholder="Nome Completo"/>
+    </p>
+
+    <p> <label for="cSenha"> Senha: </label> 
+        <input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 digitos"/>
+    </p>
+
+    <p> <label for="cMail"> E-mail: </label> 
+        <input type="email" name="tMail" id="cMail" size="20" maxlength="40" placeholder="Endereço de Email"/>
+    </p>
+
+   <fieldset id="sexo"> <legend>Sexo:</legend>
+        <input type="radio" name="tSexo" id="cMasc" checked> <label for="cMasc">Masculino</label><br>
+        <input type="radio" name="tSexo" id="cFem"> <label for="cFem"> Feminino </label>
+    </fieldset>
+
+    <p><label for="cData"> Data de Nascimento: </label> <input type="date" name="tData" id="cData"> </p>
+
+</fieldset><br>
+
+<fieldset id="endereco">
+    
+<legend>Endereço do Usuário</legend>
+    <p><label for="cRua"> Logradouro: </label> 
+        <input type="text" name="tRua" id="cRua" size="60" maxlength="60" placeholder="Rua, Av, Trav, ..."> 
+    </p>
+
+    <p><label for="cNum"> Número: </label> 
+        <input type="number" name="tNum" id="cNum" min="0" max="100">
+    </p>
+
+    <p> <label for="cEst"> Estado: </label> <select name="tEst" id="cEst">
+            <optgroup label="Região Sudeste">
+                <option value="Rj">Rio de Janeiro</option>  
+                <option value="Sp">São Paulo</option>
+                <option value="Mg">Minas Gerais</option>
+            </optgroup>
+            <optgroup label="Região Sul">
+                <option selected value="Sc">Santa Catarina</option>
+                <option value="Pr">Paraná</option>
+                <option value="Rgs">Rio Grande do Sul</option>
+            </optgroup>
+    </select> </p>
+
+    <p> <label for="cCid"> Cidade:</label> 
+        <input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Sua Cidade" list="cidades"> 
+    </p>
+    <datalist id="cidades">
+        <option value="Rio de janeiro"></option>
+        <option value="Nova Iguaçu"></option>
+        <option value="Niteroi"></option>
+        <option value="Maricá"></option>
+    </datalist>
+
+</fieldset>
+
+<fieldset id="mensagem">
+    
+<legend> Mensagem do Usuário </legend>
+
+    <p> <label for="cUrg"> Grau de Urgência:</label>
+        Min<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2">Máx
+    </p>
+
+    <p> <label for="cMsg"> Mensagem:</label>
+        <textarea name="tMsg" id="cMsg" cols="30" rows="5" placeholder="Deixe sua mensagem aqui"></textarea>
+    </p>
+
+</fieldset>
+
+<fieldset id="pedido">
+
+<legend> Quero um Google Glass </legend>
+    <p> <input type="checkbox" name="tPed" id="cPed" checked>
+        <label for="cPed"> Gostaria de adquirir um Google Glass quando disponível</label>
+    </p>
+    <p> 
+        <label for="cCor"> Cor:</label>
+        <input type="color" name="tCor" id="cCor" value="#0000ff">
+    </p>
+    <p> 
+        <label for="cQtd"> Quantidade: </label>
+        <input type="number" name="cQtd" id="tQtd" min="0" max="5" value="0">
+    </p>
+    <p> 
+        <label for="cTot"> Preço Total: R$</label>
+        <input type="text" name="tTot" id="cTot" placeholder="Total a pagar" readonly>
+    </p>
+
+</fieldset>
+
+<!-- <input type="submit" value="Enviar"> -->
+<input type="image" src="_imagens/botao-enviar.png">
+
+</form>
+
+</article>
+</section>
+
+<footer id="rodape">
+
+    <p>Copyright &copy; 2013 - by Gustavo Guanabara <br/>
+    <a href="http://facebook.com/" target="_blank">facebook</a> | <a href="http://twitter.com/" target="_blank"> Twitter </a> </p>
+    
+    </footer>
+    
+    </div>
+    </body>
+    </html>
+
+
+        <!-- Anotações importantes -->
+
+<!-- fieldset significa conjunto de campos que visualmente é feito por uma borda-->
+
+<!-- legend cria um titulo dentro de uma fieldset -->
+
+<!-- input cria um objeto para interagir com o usuário no html5 -->
+
+<!-- o parametro type traz as opções de que tipo de input voce quer usar -->
+
+<!-- o parametro size é a quantidade de caracteres que ficaram amostra na sua caixa de texto -->
+
+<!-- o parametro maxlength é a quantidade de palavras que poderam ser digitadas em sua caixa de texto -->
+
+<!-- o parametro placeholder mostra para o usuário qual tipo de informação pertence aquele campo -->
+
+<!-- o parametro type = radio geração as marcação de bolinhas na interatividade com o usuário -->
+
+<!-- OBS: para as bolinas de marcação só possam ter uma unica marcação por vez... é necessário que os dois inputs tenham o mesmo name -->
+
+<!-- o campo label é criado para refernciar o objeto ao seu id... de modo que quando clickar nome a bolinha do parametro radio seja maracada tambem -->
+
+<!-- usando o parametro checked no input radio deixamos essa opção já marcada como padrão inicial no nosso formulário -->
+
+<!-- usando o parametro min e max no input type = number podemos determinar o valor minimo e maximo desse campo -->
+
+<!-- para que os dados do formulario sejam enviados para um lugar que possa ser tratado temos que usar os parametros method e action  -->
+
+<!-- as tags select combinadas com as tags option são responsavel por criar caixas de opções pré-definidas -->
+
+<!-- o parametro selected tonar a opção seta como padrão de visualização em seu formulário -->
+
+<!-- o parametro values indica o valor que será enviado para o banco de dados -->
+
+<!-- podemos usar a tag optgroup para gerar subdivisões dentro da tag select -->
+
+<!-- a tag datalist gera uma lista que será associada a uma tag input através do parametro list = "id"... e isso gera uma espécie de auto complit -->
+
+<!-- a tag textarea é responsavel por criar uma caixa de texto grande para inserir grande contidade de informações -->
+
+<!-- a tag input com o parametro ranger cria uma barra de medição  -->
+
+<!-- o input com parametro type = checkbox cria uma caixa de texto.. e se colocamos o parametro checked essa caixa de marcação já vem marcada -->
+
+<!-- o input com o parametro type = color criar uma caixa de cor... e o parametro values determina a cor inicial dessa caixa de cor  -->
+
+<!-- o parametro readonly no input faz com o input fique somente para leitura -->
+
+<!-- tanto o input com valor type = submit quanto o input com type = image são usados para criar um botão no formulário -->
+
+<!-- o parametro oninput dentro da tag form cria uma ação que qualquer coisa que for clicada no formulário chamará uma função em javascript -->
